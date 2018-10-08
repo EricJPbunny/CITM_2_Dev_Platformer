@@ -48,23 +48,28 @@ bool j1Player::Start()
 bool j1Player::PreUpdate()
 {
 	if (App->input->GetKey(SDL_SCANCODE_A) == KEY_DOWN) {
+		//currentAnim = runAnim;
 		flip = SDL_FLIP_HORIZONTAL;
 		velocity.x -= horizontalSpeed;
 	}
 	else if (App->input->GetKey(SDL_SCANCODE_A) == KEY_UP) {
+		//currentAnim = idleAnim;
 		velocity.x += horizontalSpeed;
 	}
 
 	if (App->input->GetKey(SDL_SCANCODE_D) == KEY_DOWN) {
+		//currentAnim = runAnim;
 		flip = SDL_FLIP_NONE;
 		velocity.x += horizontalSpeed;
 	}
 	else if (App->input->GetKey(SDL_SCANCODE_D) == KEY_UP) {
+		//currentAnim = idleAnim;
 		velocity.x -= horizontalSpeed;
 	}
 
 	//&& Check that it is hitting the ground to be able to jump (he could jump on the air if not)
 	if (App->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) {
+		//currentAnim = jumpAnim;
 		fPoint force;
 		force.x = 0;
 		force.y = -2.0f;
